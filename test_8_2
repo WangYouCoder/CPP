@@ -1,0 +1,30 @@
+class Solution {
+    char* numToStr[10] = {"","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"};
+public:
+    void Combina(string digits,int di,vector<string>& retV,string Combinastr)
+    {
+        if(di == digits.size())
+        {
+            retV.push_back(Combinastr);
+            return;
+        }
+        int num = digits[di]-'0';
+        string str = numToStr[num];
+        for(auto e : str)
+        {
+            Combina(digits,di+1,retV,Combinastr+e);
+        }
+    }
+    vector<string> letterCombinations(string digits) {
+        vector<string> v;
+
+        if(digits.empty())
+        {
+            return v;
+        }
+        string str;
+        Combina(digits,0,v,str);
+
+        return v;
+    }
+};
