@@ -1,0 +1,6 @@
+﻿  Date.cpp
+D:\c\C++\Data\Data\Date.cpp(9,6): error C2062: 意外的类型“int”
+D:\c\C++\Data\Data\Date.cpp(10,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+D:\c\C++\Data\Data\Date.cpp(10,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+  test.cpp
+  正在生成代码...
