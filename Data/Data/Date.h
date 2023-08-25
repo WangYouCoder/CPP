@@ -70,13 +70,17 @@ namespace WY
 		// 日期+天数
 		Date operator+(int day)
 		{
-			return *this += day;
+			Date tmp(*this);
+			tmp += day;
+			return tmp;
 		}
 
 		// 日期-天数
 		Date operator-(int day)
 		{
-			return *this -= day;
+			Date tmp(*this);
+			tmp -= day;
+			return tmp;
 		}
 
 		// 日期-=天数
