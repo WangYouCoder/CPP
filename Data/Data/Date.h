@@ -6,6 +6,8 @@ using namespace std;
 //{
 	class Date
 	{
+		friend istream& operator>>(istream& in, Date& d);
+		friend ostream& operator<<(ostream& in, Date& d);
 	public:
 		// 获取某年某月的天数
 		int GetMonthDay(int year, int month);
@@ -77,3 +79,6 @@ using namespace std;
 		int _day;
 	};
 //}
+
+	istream& operator>>(istream& in, Date& d);
+	ostream& operator<<(ostream& in, Date& d);

@@ -26,6 +26,7 @@ Date::Date(int year,  int month, int day)
 
 Date::Date(const Date& d)
 {
+	cout << "Date::Date(const Date& d)" << endl;
 	_year = d._year;
 	_month = d._month;
 	_day = d._day;
@@ -146,6 +147,7 @@ bool Date::operator>(const Date& d)
 
 bool Date::operator==(const Date& d)
 {
+	cout << "bool Date::operator==(const Date& d)" << endl;
 	return _year == d._year
 		&& _month == d._month
 		&& _day == d._day;
@@ -222,4 +224,16 @@ int Date::operator-(const Date& d)
 void Date::Print()
 {
 	cout << _year << "年" << _month << "月" << _day << endl;
+}
+
+istream& operator>>(istream& in, Date& d)
+{
+	in >> d._year >> d._month >> d._day;
+	return in;
+}
+
+ostream& operator<<(ostream& out, Date& d)
+{
+	out << d._year << "年"<< d._month <<"月" <<  d._day;
+	return out;
 }

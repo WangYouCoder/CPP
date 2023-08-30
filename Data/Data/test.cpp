@@ -22,11 +22,23 @@ void test2()
 	Date d2(2023, 8, 27);
 
 	cout << d1 - d2 << endl;
+
+	cout << d1 << endl;
+}
+
+void test3()
+{
+	Date d1(2023, 8, 30);
+	Date d3 = d1;
+
+	//Date* ptr = nullptr;
+	//ptr->Print();
 }
 
 int main()
 {
 	//test1();
-	test2();
+	//test2();
+	test3();
 	return 0;
 }
