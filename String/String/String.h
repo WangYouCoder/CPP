@@ -10,16 +10,14 @@ namespace WY
         friend istream& operator>>(istream& _cin, WY::string& s);
 
     public:
-
         typedef char* iterator;
 
     public:
-
         string(const char* str = "");
 
         string(const string& s);
 
-        string& operator=(const string& s);
+        string& operator = (const string& s);
 
         ~string();
             //////////////////////////////////////////////////////////////
@@ -104,20 +102,14 @@ namespace WY
 
         string& insert(size_t pos, const char* str);
 
-
-
         // 删除pos位置上的元素，并返回该元素的下一个位置
-
         string& erase(size_t pos, size_t len);
 
     private:
-
         char* _str;
-
         size_t _capacity;
-
         size_t _size;
-
     };
 
+    void test_string1();
 };
