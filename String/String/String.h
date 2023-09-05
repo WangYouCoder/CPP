@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include<assert.h>
 using namespace std;
 
 namespace WY
@@ -11,6 +12,7 @@ namespace WY
 
     public:
         typedef char* iterator;
+        typedef const char* const_iterator;
 
     public:
         string(const char* str = "");
@@ -23,7 +25,11 @@ namespace WY
             //////////////////////////////////////////////////////////////
             // iterator
         iterator begin();
+        const_iterator begin()const;
+
         iterator end();
+
+        const_iterator end()const;
             /////////////////////////////////////////////////////////////
 
             // modify
@@ -98,18 +104,28 @@ namespace WY
 
         // 在pos位置上插入字符c/字符串str，并返回该字符的位置
 
-        string& insert(size_t pos, char c);
+        void insert(size_t pos, char c);
 
-        string& insert(size_t pos, const char* str);
+        void insert(size_t pos, const char* str);
 
         // 删除pos位置上的元素，并返回该元素的下一个位置
-        string& erase(size_t pos, size_t len);
+        void erase(size_t pos, size_t len = npos);
 
     private:
         char* _str;
         size_t _capacity;
         size_t _size;
+
+        const static size_t npos;
     };
 
+    ostream& operator<<(ostream& _cout, const WY::string& s);
+    istream& operator>>(istream& _cin, WY::string& s);
+
     void test_string1();
+    void test_string2();
+    void test_string3();
+    void test_string4();
+    void test_string5();
+    void test_string6();
 };
